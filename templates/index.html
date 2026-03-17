@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIPHER Processor [v1.0]</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+
+<div class="cyber-background">
+    <svg class="cyber-lines" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        
+        <path class="track" d="M -50 100 L 200 100 L 250 150 L 400 150 L 450 200 L 600 200" />
+        <path class="track" d="M 1050 500 L 800 500 L 750 450 L 600 450 L 550 400 L 400 400" />
+        <path class="track" d="M 150 -50 L 150 200 L 250 300 L 250 450 L 150 550 L 150 650" />
+        <path class="track" d="M 850 650 L 850 400 L 750 300 L 750 150 L 850 50 L 850 -50" />
+        <path class="track" d="M -50 400 L 100 400 L 150 350 L 300 350 L 350 300 L 500 300" />
+        <path class="track" d="M 1050 200 L 900 200 L 850 250 L 700 250 L 650 300 L 500 300" />
+
+        <path class="pulse p1" d="M -50 100 L 200 100 L 250 150 L 400 150 L 450 200 L 600 200" />
+        <path class="pulse p2" d="M 1050 500 L 800 500 L 750 450 L 600 450 L 550 400 L 400 400" />
+        <path class="pulse p3" d="M 150 -50 L 150 200 L 250 300 L 250 450 L 150 550 L 150 650" />
+        <path class="pulse p4" d="M 850 650 L 850 400 L 750 300 L 750 150 L 850 50 L 850 -50" />
+        <path class="pulse p5" d="M -50 400 L 100 400 L 150 350 L 300 350 L 350 300 L 500 300" />
+        <path class="pulse p1" d="M 1050 200 L 900 200 L 850 250 L 700 250 L 650 300 L 500 300" />
+    </svg>
+</div>
+
+<div class="container">
+    <h2>CIPHER Processor [v1.0]</h2>
+
+    <label for="textInput">>> Input Data (Plaintext/Ciphertext):</label>
+    <textarea id="textInput" rows="4" placeholder="Awaiting operational data..."></textarea>
+
+    <label for="keyInput">>> Functional key (26 Unique letters):</label>
+    <input type="text" id="keyInput" placeholder="e.g., QWERTYUIOPASDFGHJKLZXCVBNM" maxlength="26">
+
+    <div class="buttons">
+        <button class="btn-encrypt" onclick="processText('encrypt')">Encrypt [E]</button>
+        <button class="btn-decrypt" onclick="processText('decrypt')">Decrypt [D]</button>
+    </div>
+
+    <div class="result-box">
+        <strong>>> Output Console:</strong>
+        <p id="outputText" style="margin-top: 10px; margin-bottom: 0; color: #ccf;">Operational status: STANDBY...</p>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
